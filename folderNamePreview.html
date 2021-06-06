@@ -1,0 +1,13 @@
+<script>
+  // If the user changes the text appended to the student folder names, this script updates the folder name preview displayed
+  $(document).ready(function(){
+      $("#studentFolderAppend").on("input", function(){
+          let text = $(this).val();
+          if(text) {
+            $("#studentFolderPreview").text("Smith, John " + "(" + text + ")");
+          } else {
+            $("#studentFolderPreview").text("Smith, John");
+          }
+      });
+  });
+</script>

@@ -1,0 +1,8 @@
+<script>
+  // enter key was causing problems with the web app, so this script blocks it from interacting with the text fields
+  $(document).keypress(function(event){
+    if (event.which == '13') {
+      event.preventDefault();
+    }
+  });
+</script>

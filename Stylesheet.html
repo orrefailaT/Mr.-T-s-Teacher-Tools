@@ -1,0 +1,108 @@
+<style>
+
+  @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+  html {
+    background-color: #EDF0F2;
+  }
+
+  .wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "sidebar"
+    "ad"
+    "footer";
+  }
+
+  .main-head {
+    grid-area: header;
+    background-color: #FFFFFF;
+    font-family: 'RocknRoll One', sans-serif;
+  }
+
+  .main-head h1 {
+    display: inline;
+    padding: 10px;
+  }
+
+  .main-head img{
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  .main-nav {
+    grid-area: nav;
+    width: 80%;
+    margin: auto;
+    vertical-align: top;
+  }
+
+  .main-nav a:link, a:visited {
+      background-color: #70aefa;
+      color: white;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+}
+
+  .main-nav a:hover, a:active {
+      background-color: blue;
+  }
+
+  .content {
+    grid-area: content;
+    width: 80%;
+    margin: auto;
+    vertical-align: top;
+    background-color: #FFFFFF;
+    color:#000000;
+  }
+
+  h2, h3{
+    width:100%;
+    margin: 0px;
+    padding: 15px;
+  }
+
+  form{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #chooseFolder {
+    display: none;
+    padding: 10px;
+  }
+
+  #subfolder, #linkRoster, #createFolders{
+    padding:25px;
+    margin: 5px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-style: solid;
+  }
+
+  #createFolders{
+    margin-bottom: 25px
+  }
+
+  #studentFolderPreview{
+    font-weight: bold;
+  }
+
+  #createFoldersButton{
+    margin: 10px;
+  }
+
+  .urlInput {
+    width: 40em;
+  }
+
+</style>

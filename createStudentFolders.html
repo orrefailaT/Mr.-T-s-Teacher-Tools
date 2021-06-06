@@ -1,0 +1,32 @@
+<script>
+  function createFoldersSuccess() {
+    $('#createFoldersResult').text("Student folders created successfully!");
+  }
+
+  function createFoldersError(){
+    $('#createFoldersResult').text('Folder creation failed, please try again.');
+  }
+
+  $(document).ready(function(){
+    $('#createFoldersButton').click(function(){
+      let subFolder = $('#subfolderURL').val();
+      let rosterURL = $('#rosterURL').val();
+      let classFolderName = $('#classFolderName').val();
+      let studentFolderAppend = $('#studentFolderAppend').val();
+      
+      if (classFolderName && rosterURL){
+        $('#createFoldersResult').text('Creating Folders...');
+        google.script.run.withSuccessHandler(createFoldersSuccess)
+                         .withFailureHandler(createFoldersError)
+                         .createStudentFolders(subFolder, rosterURL, classFolderName, studentFolderAppend);
+      } else if (rosterURL) {
+        $('#createFoldersResult').text('Please provide a name for your class folder.');
+      } else if (classFolderName) {
+        $('#createFoldersResult').text('Please provide a link to your class roster.');
+      } else {
+        $('#createFoldersResult').text('Please provide a link to your class roster and a name for your class folder.');
+
+      }
+    });
+  });
+</script>

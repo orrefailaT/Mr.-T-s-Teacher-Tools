@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <?!= include('Stylesheet'); ?>
+    <?!= include('blockEnterKey'); ?>
+  </head>
+
+  <body>
+  
+    <div class='wrapper'>
+  
+      <header class="main-head">
+        
+        <h1>Mr. T's Teacher Tools</h1>
+        <a id='linkedin' href='https://www.linkedin.com/in/zjtalia/' target='blank'>
+          <img src='https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg'></img>
+        </a>
+        
+        <a id='github' href='https://github.com/zjtalia' target='blank'>
+          <img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'></img>
+        </a>
+      
+      </header>
+  
+      <nav class="main-nav">      
+          <a href='<?= ScriptApp.getService().getUrl(); ?>'>Home</a>
+          <a href='<?= ScriptApp.getService().getUrl(); ?>?v=tools'>Tools</a>
+          <a href="<?= ScriptApp.getService().getUrl(); ?>?v=help">Help</a>
+      </nav> 
+  
+      <div class='content'>
+        <h2>Welcome to the Student Folder Creator!</h2>
+                            
+        <div id="subfolder">
+          <h3>The default location for your class folder is in your main Drive. <br/>
+            Check the box below to create your class folder in a subfolder instead.</h3>
+          
+          <form>
+            <label for="subfolderCheck">Select a Subfolder</label>
+            <input type="checkbox" id="subfolderCheck"/>
+          </form>
+        
+          <div id="chooseFolder">
+            <form>
+              <label for="subfolderURL">Paste Link to Subfolder:</label>
+              <input type="url" id="subfolderURL" class="urlInput">
+              <input type="button" id="selectFolder" value="Check Link"/>
+            </form>
+          
+            <span>Linked Folder: </span>
+            <span id="subfolderSelected"></span> 
+          </div>
+        </div>
+
+        <div id="linkRoster">
+          <form>
+            <label for="rosterURL">Paste Link to Roster:</label>
+            <input type="url" id="rosterURL" class="urlInput"/>
+            <input type="button" id="selectRoster" value="Check Link"/>
+          </form>
+                    
+          <span>Linked Roster: </span>
+          <span id="rosterSelected"></span>
+        </div>
+
+        <div id="createFolders">
+          <form>
+            <label for="classFolderName">Class Folder Name:</label>
+            <input type="text" id="classFolderName"/>
+          </form>
+
+          <form>
+            <label for="studentFolderAppend">If you would like to add anything to the end of the Student Folder names (e.g. the class name), type it here.</label>
+            <input type="text" id="studentFolderAppend"/>
+          </form>
+
+          <span>Student Folder name preview:</span>
+          <span id="studentFolderPreview">Smith, John</span>
+          <br/>
+          <input type="button" id="createFoldersButton" value="Create Student Folders"/>
+          <p id="createFoldersResult"></p>
+        </div>
+        
+      </div>
+
+    </div>
+  
+  </body>
+
+  <?!= include('linkRoster'); ?>
+  <?!= include('toggleSubfolder'); ?>
+  <?!= include('linkSubfolder'); ?>
+  <?!= include('folderNamePreview'); ?>
+  <?!= include('createStudentFolders'); ?>
+
+</html>

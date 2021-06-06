@@ -1,0 +1,24 @@
+<script>
+  // Checks the URL provided for the roster. Displays the name of the sheet on success, otherwise states there was an error
+
+
+  function setRosterName(name) {
+    $('#rosterSelected').text(name);
+  }
+
+  function rosterUrlError(){
+    $('#rosterSelected').text('Error, invalid URL');
+  }
+
+  $(document).ready(function(){
+    $('#selectRoster').click(function(){
+      let text = $('#rosterURL').val();
+      if (text){
+        $('#rosterSelected').text('Loading...');
+        google.script.run.withSuccessHandler(setRosterName).withFailureHandler(rosterUrlError).spreadsheetUrlToName(text);
+      } else {
+        $('#rosterSelected').text('No URL submitted, please provide a link to your student roster!');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <base target="_top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <?!= include('Stylesheet'); ?>
+    <?!= include('blockEnterKey'); ?>
+  </head>
+
+  <body>
+
+    <div class='wrapper'>
+
+      <header class="main-head">
+        <h1>Mr. T's Teacher Tools</h1>
+        <a id='linkedin' href='https://www.linkedin.com/in/zjtalia/' target='blank'><img src='https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg'></img></a>
+        <a id='github' href='https://github.com/zjtalia' target='blank'><img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'></img></a>
+      </header>
+  
+      <nav class="main-nav">      
+          <a href='<?= ScriptApp.getService().getUrl(); ?>'>Home</a>
+          <a href='<?= ScriptApp.getService().getUrl(); ?>?v=tools'>Tools</a>
+          <a href="<?= ScriptApp.getService().getUrl(); ?>?v=help">Help</a>
+      </nav>
+
+      <div class='content'>
+        <h1>Welcome to the Tools Page!</h1>
+        <ul>
+          <li><a href='<?= ScriptApp.getService().getUrl(); ?>?v=folderCreator'>Folder Creator</a></li>
+        </ul>
+
+      </div>
+    </div>
+  
+  </body>
+
+</html>

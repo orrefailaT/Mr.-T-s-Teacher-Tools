@@ -1,0 +1,22 @@
+<script>
+  // Checks the URL provided for the subfolder. Displays the name of the folder on success, otherwise states there was an error
+  function setFolderName(name) {
+    $('#subfolderSelected').text(name);
+  }
+
+  function folderUrlError(){
+    $('#subfolderSelected').text('Error, invalid URL');
+  }
+
+  $(document).ready(function(){
+    $('#selectFolder').click(function(){
+      let text = $('#subfolderURL').val();
+      if (text){
+        $('#subfolderSelected').text('Loading...');
+        google.script.run.withSuccessHandler(setFolderName).withFailureHandler(folderUrlError).folderUrlToName(text);
+      } else {
+        $('#subfolderSelected').text('No URL submitted, folder will be created in your main Google Drive.');
+      }
+    });
+  });
+</script>
